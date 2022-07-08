@@ -15,6 +15,29 @@ public class EventService {
     public List<Event> findAll(){
         return eventRepository.findAll();
     }
-    
+
+    public Event addEvent(Event eventDto){
+        Event event = new Event();
+        event.setDescription(eventDto.getDescription());
+        event.setStartDate(eventDto.getStartDate());
+        event.setEndingDate(eventDto.getEndingDate());
+        event.setParticipant(eventDto.getParticipant());
+        event.setQuota(event.getQuota());
+        return event;
+    }
+
+    public void deleteEvent(Long id){
+        eventRepository.deleteById(id);
+    }
+
+    public Event customizeEvent(Event eventDto){
+        Event event = eventRepository.findEventById(eventDto.getId());
+        event.setDescription(eventDto.getDescription());
+        event.setStartDate(eventDto.getStartDate());
+        event.setEndingDate(eventDto.getEndingDate());
+        event.setParticipant(eventDto.getParticipant());
+        event.setQuota(event.getQuota());
+        return event;
+    }
 
 }
