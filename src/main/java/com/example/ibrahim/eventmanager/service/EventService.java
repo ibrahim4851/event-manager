@@ -22,7 +22,8 @@ public class EventService {
         event.setStartDate(eventDto.getStartDate());
         event.setEndingDate(eventDto.getEndingDate());
         event.setParticipant(eventDto.getParticipant());
-        event.setQuota(event.getQuota());
+        event.setQuota(eventDto.getQuota());
+        eventRepository.save(event);
         return event;
     }
 
@@ -37,6 +38,7 @@ public class EventService {
         event.setEndingDate(eventDto.getEndingDate());
         event.setParticipant(eventDto.getParticipant());
         event.setQuota(event.getQuota());
+        eventRepository.save(event);
         return event;
     }
 

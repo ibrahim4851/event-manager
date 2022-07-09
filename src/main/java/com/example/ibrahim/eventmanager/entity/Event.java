@@ -1,9 +1,9 @@
 package com.example.ibrahim.eventmanager.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.springframework.context.annotation.Primary;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -11,13 +11,19 @@ import java.util.Date;
 public class Event {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String description;
+
+    @DateTimeFormat(pattern = "dd.MM.yyyy")
     private Date startDate;
+
+    @DateTimeFormat(pattern = "dd.MM.yyyy")
     private Date endingDate;
+
     private int quota;
+
     private int participant;
 
     public Long getId() {
