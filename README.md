@@ -6,6 +6,10 @@
 
 EventManager API lets you create new events, edit, view and delete them.
 
+## Installation:
+
+You need to configure application.properties file for your mysql credentials.
+
 ## Endpoints:
 
 
